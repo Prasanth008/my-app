@@ -10,7 +10,7 @@ node{
    }
    stage('Build Docker Imager'){
    sh 'docker build -t prabaharanitlearn/myweb:0.0.2 .'
-   sh 'make build'		   
+   sh 'make build noe'		   
    }
    stage('Docker Image Push'){
    withCredentials([string(credentialsId: 'dockerPass', variable: 'dockerPassword')]) {
