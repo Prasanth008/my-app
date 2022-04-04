@@ -9,9 +9,9 @@ node{
 	  sh 'mv target/myweb*.war target/newapp.war'
    }
    stage('Build Docker Imager'){
-   sh 'docker build -t prabaharanitlearn/myweb:0.0.2 .'
-   sh 'make build noe'		   
+   sh 'docker build -t prabaharanitlearn/myweb:0.0.2 .'  
    }
+	
    stage('Docker Image Push'){
    withCredentials([string(credentialsId: 'dockerPass', variable: 'dockerPassword')]) {
    sh "docker login -u prabaharanitlearn -p ${dockerPassword}"
